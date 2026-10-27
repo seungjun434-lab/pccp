@@ -1,0 +1,33 @@
+def solution(bandage, health, attacks):
+    
+    
+    i = 0
+    j = 0
+    k = 0
+    while(i<attacks[len(attacks)-1][0]):
+        i+=1
+        if (i ==attacks[j][0]):
+            health -= attacks[j][1]
+            if (health <=0):
+                return -1
+            j+=1
+            k = 0
+        else:
+            if health + bandage[1] <=30:
+
+                health += bandage[1]
+            else:
+                health = 30
+
+            k+=1
+
+        if (k>=bandage[0]):
+
+            if ( health + bandage[2]) <= 30:
+                health+=bandage[2]
+            else:
+                health = 30
+
+            k = 0
+    return health
+    
